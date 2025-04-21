@@ -19,7 +19,8 @@ Sub UpdateSalesTable()
     currentYear = Year(Date)
 
     ' ▼請求書フォルダのパス
-    folderPath = "G:\マイドライブ\領収書管理\" & currentYear & "年\請求書\"
+    folderPath = "あなたのファイルパスをここに貼り付けてください（currentYearを用いて現在年月自動取得可能）"
+    ' 例 "G:\マイドライブ\領収書管理\" & currentYear & "年\請求書\"
 
     ' ▼売上シート取得
     Set ws = ThisWorkbook.Sheets("売上表")
@@ -135,6 +136,6 @@ Sub UpdateSalesTable()
     End With
 
     ws.Columns.AutoFit
-    MsgBox "? 売上シートが更新されました！（ファイル名ベース重複チェック）", vbInformation
+    MsgBox "売上シートが更新されました！", vbInformation
 End Sub
 

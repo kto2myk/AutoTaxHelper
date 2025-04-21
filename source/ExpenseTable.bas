@@ -24,8 +24,9 @@ Sub UpdateExpenseTable()
     currentYear = Year(Date)
 
     ' ▼経費フォルダのパス
-    folderPath = "G:\マイドライブ\領収書管理\" & currentYear & "年\経費\"
-    
+    folderPath = "あなたのファイルパスをここに貼り付けてください（currentYearを用いて現在年月自動取得可能）"
+    ' 例 "G:\マイドライブ\領収書管理\" & currentYear & "年\経費\"
+
     ' ▼ワークシート取得
     Set ws = ThisWorkbook.Sheets("経費管理")
 
@@ -150,5 +151,5 @@ Sub UpdateExpenseTable()
     
     ws.Columns.AutoFit
 
-    MsgBox "? 経費シートが更新されました！", vbInformation
+    MsgBox "経費シートが更新されました！", vbInformation
 End Sub

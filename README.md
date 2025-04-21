@@ -1,7 +1,6 @@
- 
 # AutoTaxHelper 🧾✨
 
-**TaxEase** is a simple yet powerful Excel VBA automation tool that streamlines the Japanese tax filing process for freelancers and small business owners.  
+**AutoTaxHelper** is a simple yet powerful Excel VBA automation tool that streamlines the Japanese tax filing process for freelancers and small business owners.  
 It automatically scans receipts and invoices from designated folders, extracts key data from filenames, and populates structured expense and sales sheets in your Excel workbook.
 
 ---
@@ -9,14 +8,14 @@ It automatically scans receipts and invoices from designated folders, extracts k
 ## 📂 Folder Structure
 
 ```
-TaxEase/
+AutoTaxHelper/
 ├── source/
 │   ├── ExpenseTable.bas           # 経費データ読み込みマクロ
 │   ├── SalesTable.bas             # 売上データ読み込みマクロ
 │   ├── ProfitStatement.bas        # 損益計算シート更新マクロ
 │   └── Main.bas                   # すべてを一括実行するマクロ
 ├── example/
-│   └── TaxEase_Sample.xlsm       # 使用例付きのExcelファイル
+│   └── AutoTaxHelper_Sample.xlsm # 使用例付きのExcelファイル
 ├── README.md
 └── .gitignore
 ```
@@ -49,7 +48,19 @@ TaxEase/
 
 ## 🔧 使用手順
 
-### ① 必須：ファイル保存先のフォルダを指定
+### ① 必須：Excelファイルに**以下の3つのシートを用意してください**
+
+| シート名       | 目的                     |
+|----------------|--------------------------|
+| 経費管理       | 経費一覧とテーブル挿入先 |
+| 売上表         | 売上一覧とテーブル挿入先 |
+| 損益計算書     | 自動計算された損益表示用 |
+
+💡 **これらのシート名はVBAマクロ内で固定的に参照されます。名称を変更しないでください。**
+
+---
+
+### ② フォルダパスの指定
 
 各マクロ冒頭の以下のコードを**自分の環境に合わせて修正**してください：
 
@@ -65,7 +76,7 @@ folderPath = "G:\マイドライブ\領収書管理\2025年\請求書\"
 
 ---
 
-### ② Excel へのマクロインポート手順
+### ③ Excel へのマクロインポート手順
 
 1. `.xlsm` ファイルを開く
 2. `Alt + F11` → VBAエディタを開く
@@ -73,7 +84,7 @@ folderPath = "G:\マイドライブ\領収書管理\2025年\請求書\"
 
 ---
 
-### ③ ボタンにマクロを割り当てる
+### ④ ボタンにマクロを割り当てる
 
 1. Excelシートに「挿入 → フォームコントロール → ボタン」を追加
 2. ボタンを右クリック → 「マクロの登録」
